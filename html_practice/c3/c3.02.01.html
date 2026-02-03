@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>텍스트 입력 연습</title>
+</head>
+<body>
+ <h2>회원가입 폼</h2>
+<!-- <form>
+ <label>이름: </label>
+ <input type="text" name="username">
+ <br><br>
+
+ <label>이메일: </label>
+ <input type="text" name="email">
+ <br><br>
+
+ <input type="submit" value="가입하기">
+ </form>
+</body>
+</html>-->
+
+<form>
+ <label>이름: </label>
+ <input type="text" name="username" placeholder="홍길동" maxlength="10" required>
+ <br><br>
+
+ <label>이메일: </label>
+ <input type="text" name="email" placeholder="example@email.com" size="30">
+ <br><br>
+
+ <label>회사명: </label>
+ <input type="text" name="company" value="(주)웹개발" readonly>
+ <br><br>
+
+ <input type="submit" value="가입하기">
+</form>
+
+
+<!--
+새로 추가된 속성들:
+- placeholder: 입력 힌트 표시
+- maxlength: 최대 입력 글자 수 제한
+- required: 필수 입력 항목 지정
+- size: 입력창의 크기 조절
+- value: 기본값 설정
+- readonly: 읽기 전용 (수정 불가)-->
