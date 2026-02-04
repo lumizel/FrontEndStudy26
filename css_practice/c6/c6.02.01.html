@@ -1,0 +1,78 @@
+<!--
+width와 height 속성의 이해
+width 속성은 요소의 가로 크기를, height 속성은 세로 크기를 결정합니다. 마치 액자의 크기를 정하는 것과 같아요!
+
+.my-box {
+ width: 300px; /* 가로 300픽셀 */
+ height: 200px; /* 세로 200픽셀 */
+}
+다양한 크기 단위들
+웹에서는 여러 단위를 사용해 크기를 지정할 수 있습니다.
+
+px (픽셀): 절대적인 크기 width: 300px
+% (퍼센트): 부모 요소에 대한 상대적 크기 width: 50%
+em: 현재 요소의 글자 크기 기준 width: 10em
+rem: 루트 요소의 글자 크기 기준 width: 15rem
+vw/vh: 뷰포트(화면) 크기 기준 width: 50vw
+
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+ <meta charset="UTF-8">
+ <title>콘텐츠 영역 실습</title>
+ <style>
+ .content-box {
+ width: 300px;
+ height: 200px;
+ background-color: #e3f2fd;
+ border: 2px solid #1976d2;
+ }
+
+ .percent-box {
+ width: 50%; /* 부모의 50% 크기 */
+ height: 150px;
+ background-color: #f3e5f5;
+ border: 2px solid #7b1fa2;
+ margin-bottom: 10px;
+}
+
+.viewport-box {
+ width: 30vw; /* 화면 너비의 30% */
+ height: 20vh; /* 화면 높이의 20% */
+ background-color: #e8f5e8;
+ border: 2px solid #388e3c;
+}
+   .card-container {
+ width: 100%;
+ max-width: 400px; /* 최대 너비 제한 */
+ margin: 0 auto; /* 가운데 정렬 */
+}
+
+.card {
+ width: 100%;
+ min-height: 200px; /* 최소 높이 보장 */
+ padding: 20px;
+ background-color: #fff;
+ border: 1px solid #ddd;
+ border-radius: 8px;
+ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+ </style>
+</head>
+<body>
+ <div class="content-box">
+ 이것이 콘텐츠 영역입니다!
+ </div>
+
+<div class="card-container">
+ <div class="card">
+ <h3>상품 카드</h3>
+ <p>이 카드는 반응형으로 만들어졌습니다.</p>
+ </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!--
+가상 요소를 사용할 때 반드시 기억해야 할 규칙이 있습니다.
+
+content 속성은 필수: 빈 문자열("")이라도 반드시 써야 함
+기본적으로 인라인 요소: 크기를 조정하려면 display 속성 변경 필요
+HTML에는 나타나지 않음: 검사 도구에서만 확인 가능
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+ <style>
+ .greeting {
+ font-size: 20px;
+ color: #333;
+ padding: 10px;
+ }
+
+ .greeting::before {
+ content: " 👋";
+ color: #ff6b6b;
+ }
+
+ .greeting::after {
+ content: "👋 ";
+ color: #4ecdc4;
+ }
+ /* 다운로드 버튼 */
+   .button {
+ display: inline-block;
+ padding: 12px 20px;
+ background-color: #3498db;
+ color: white;
+ text-decoration: none;
+ border-radius: 5px;
+ position: relative;
+ }
+
+ .button::before {
+ content: "";
+ display: inline-block;
+ width: 0;
+ height: 0;
+ border-left: 8px solid transparent;
+ border-right: 8px solid transparent;
+ border-bottom: 8px solid white;
+ margin-right: 8px;
+ vertical-align: middle;
+ }
+
+ .button::after {
+ content: "→";
+ margin-left: 8px;
+ font-weight: bold;
+ }
+/* 말풍선 */
+    .speech-bubble {
+ background-color: #f8f9fa;
+ border: 2px solid #dee2e6;
+ border-radius: 10px;
+ padding: 15px;
+ margin: 20px;
+ position: relative;
+ max-width: 300px;
+ }
+
+ .speech-bubble::after {
+ content: "";
+ position: absolute;
+ bottom: -12px;
+ left: 30px;
+ width: 0;
+ height: 0;
+ border-left: 12px solid transparent;
+ border-right: 12px solid transparent;
+ border-top: 12px solid #f8f9fa;
+ }
+
+ .speech-bubble::before {
+ content: "";
+ position: absolute;
+ bottom: -15px;
+ left: 28px;
+ width: 0;
+ height: 0;
+ border-left: 14px solid transparent;
+ border-right: 14px solid transparent;
+ border-top: 14px solid #dee2e6;
+ }
+
+ </style>
+
+
+
+</head>
+<body>
+ <p class="greeting">안녕하세요!</p>
+  <a href="#" class="button">다운로드</a>
+<div class="speech-bubble">
+ 가상 요소를 사용하면 이렇게 멋진 말풍선도 만들 수 있어요!
+</div>
+</body>
+</html>

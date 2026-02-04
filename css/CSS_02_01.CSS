@@ -1,0 +1,12 @@
+body {
+ font-family: Arial, sans-serif;
+ line-height: 1.6;
+ margin: 20px;
+}
+
+h1 {
+ border-bottom: 2px solid green;
+}
+
+
+/*확장자가 CSS라 STYLE 태그 입력 안해도 됨*/

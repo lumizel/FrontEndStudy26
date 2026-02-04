@@ -1,0 +1,66 @@
+<!--
+nav 태그가 특별한 이유
+일반적인 <div> 태그로도 메뉴를 만들 수 있지만, nav 태그를 사용하면 다음과 같은 장점이 있습니다.
+
+의미 전달: 검색엔진과 스크린 리더가 "여기가 내비게이션 영역이구나!"라고 명확히 인식
+접근성 향상: 시각 장애인을 위한 스크린 리더가 내비게이션을 쉽게 찾을 수 있음
+SEO 최적화: 검색엔진이 사이트 구조를 더 잘 이해하여 검색 순위에 도움
+유지보수성: 개발자가 코드를 볼 때 내비게이션 영역을 한눈에 파악 가능
+
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>스타일링된 내비게이션</title>
+
+ <style>
+ /* 헤더 스타일 */
+ header {
+ background-color: #333;
+ color: white;
+ padding: 1rem;
+ }
+
+ /* 내비게이션 스타일 */
+ nav ul {
+ list-style: none; /* 불릿 포인트 제거 */
+ margin: 0;
+ padding: 0;
+ display: flex; /* 가로로 배열 */
+ }
+
+ nav li {
+ margin-right: 2rem;
+ }
+
+ nav a {
+ color: white;
+ text-decoration: none;
+ font-weight: bold;
+ transition: color 0.3s;
+ }
+
+ nav a:hover {
+ color: #ffd700; /* 마우스 올렸을 때 금색 */
+ }
+ </style>
+
+</head>
+<body>
+ <header>
+ <h1>김개발의 웹사이트</h1>
+ <nav>
+ <ul>
+ <li><a href="#home">홈</a></li>
+ <li><a href="#about">소개</a></li>
+ <li><a href="#services">서비스</a></li>
+ <li><a href="#contact">연락처</a></li>
+ </ul>
+ </nav>
+ </header>
+</body>
+</html>
+
