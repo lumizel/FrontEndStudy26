@@ -1,0 +1,56 @@
+<!--
+for (초기값; 조건; 증감) {
+    // 반복할 코드
+}
+
+for (let i = 1; i <= 5; i++) {
+    console.log(i + "번째 반복");
+}
+이 코드는 다음과 같이 실행됩니다.
+1. i = 1로 시작
+2. i <= 5 조건 확인 (참이므로 계속)
+3. 코드 실행: "1번째 반복" 출력
+4. i++로 i를 1 증가 (i = 2)
+5. 조건 확인하고 반복...
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+    <title>반복문 연습</title>
+</head>
+<body>
+    <h1>반복문 결과</h1>
+    <div id="result"></div>
+
+    <script>
+        let result = '';
+
+        // 1부터 5까지 반복
+        for (let i = 1; i <= 5; i++) {
+            result += '★'.repeat(i) + '<br>';
+        }
+
+        // 역순으로 반복 (5부터 1까지)
+for (let i = 5; i >= 1; i--) {
+    console.log(i + "초 후 시작!");
+}
+
+// 짝수만 출력
+for (let i = 2; i <= 10; i += 2) {
+    console.log(i + "는 짝수");
+}
+
+// 조건부 실행
+for (let i = 1; i <= 10; i++) {
+    if (i % 3 === 0) {
+        console.log(i + "는 3의 배수!");
+    }
+}
+
+
+        document.getElementById('result').innerHTML = result;
+    </script>
+</body>
+</html>

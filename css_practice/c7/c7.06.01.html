@@ -1,0 +1,100 @@
+<!--
+flex 속성은 플렉스 아이템이 컨테이너 내에서 어떻게 크기를
+조절할지 결정하는 마법 같은 속성입니다
+
+flex-grow (성장 비율)
+여유 공간을 어떤 비율로 나눠 가질지 결정
+숫자가 클수록 더 많은 공간을 차지
+기본값: 0 (크기 변화 없음)
+
+flex-shrink (축소 비율)
+공간이 부족할 때 어떤 비율로 줄어들지 결정
+기본값: 1 (동일하게 축소)
+
+flex-basis (기본 크기)
+크기 조절 전 기본 크기 설정
+기본값: auto (내용 크기에 따라
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Flex 속성 실습</title>
+
+ <style>
+ .container {
+ display: flex;
+ gap: 20px;
+ padding: 20px;
+ border: 2px solid #333;
+ margin: 20px;
+ }
+
+ .card {
+ background: linear-gradient(135deg, #667eea 25%, #764ba2 100%);
+ color: white;
+ padding: 20px;
+ border-radius: 10px;
+ text-align: center;
+ }
+
+<!-- .card1 { flex: 1; }
+ .card2 { flex: 1; }
+ .card3 { flex: 1; }-->
+
+<!--.card1 { flex: 1; } /* 1/6 비율 */
+.card2 { flex: 3; } /* 3/6 비율 (절반) */
+.card3 { flex: 2; } /* 2/6 비율 */-->
+
+   .advanced-container {
+ display: flex;
+ gap: 20px;
+ padding: 20px;
+ border: 2px solid #e74c3c;
+ margin: 20px;
+ width: 800px; /* 고정 너비로 테스트 */
+}
+
+.advanced-card {
+ background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+ color: white;
+ padding: 20px;
+ border-radius: 10px;
+ text-align: center;
+}
+
+.advanced-card1 {
+ flex: 1 1 100px; /* grow: 1, shrink: 1, basis: 100px */
+}
+.advanced-card2 {
+ flex: 2 1 200px; /* grow: 2, shrink: 1, basis: 200px */
+}
+.advanced-card3 {
+ flex: 1 2 150px; /* grow: 1, shrink: 2, basis: 150px */
+}
+
+
+
+ </style>
+</head>
+
+<body>
+ <div class="container">
+   <div class="card card1">카드 1<br>간단한 내용</div>
+   <div class="card card2">카드 2<br>보통 내용입니다</div>
+   <div class="card card3">카드 3<br>짧음</div>
+
+ </div>
+</body>
+</html>
+
+
+<!--
+flex 속성은 플렉스 아이템의 크기 조절을 담당하는 핵심 속성
+flex-grow: 여유 공간 배분 비율 (기본값: 0)
+flex-shrink: 공간 부족 시 축소 비율 (기본값: 1)
+flex-basis: 크기 조절 전 기본 크기 (기본값: auto)
+실무 팁: flex: 1은 동일 비율, flex: 0 0 크기는 고정 크기
+-->

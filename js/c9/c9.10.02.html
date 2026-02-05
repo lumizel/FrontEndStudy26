@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+// 잘못된 예 - 전역 변수 사용
+let count = 0;
+
+function increment() {
+ count++;
+ console.log("현재 카운트:", count);
+}
+
+function reset() {
+ count = 0;
+ console.log("카운트 리셋됨");
+}
+
+// 개선된 예 - 클로저 활용
+function createCounter() {
+ let count = 0; // 은닉된 변수
+
+ return {
+ increment: function() {
+ count++;
+ console.log("현재 카운트:", count);
+ },
+ reset: function() {
+ count = 0;
+ console.log("카운트 리셋됨");
+ },
+ getCount: function() {
+ return count;
+ }
+ };
+}
+
+const counter = createCounter();
+counter.increment(); // 1
+counter.increment(); // 2
+console.log(counter.getCount()); // 2
+
+
+</script>
+
+</body>
+</html>
+
+<!--
+핵심 포인트:
+- 안쪽에서 바깥쪽 변수에 접근 가능 (스코프 체인)
+- 바깥쪽에서 안쪽 변수에 접근 불가능
+- 같은 이름의 변수는 가까운 스코프의 것이 우선
+
+-->

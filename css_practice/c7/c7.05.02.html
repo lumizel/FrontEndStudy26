@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .container {
+ display: flex;
+ flex-wrap: wrap;
+ width: 400px;
+ height: 300px; /* 높이를 늘려서 여백 확보 */
+ border: 2px solid #333;
+ margin: 20px 0;
+}
+
+.align-start {
+ align-content: flex-start;
+}
+
+.align-center {
+ align-content: center;
+}
+
+.align-space-between {
+ align-content: space-between;
+}
+
+.item {
+ width: 120px;
+ height: 60px;
+ background-color: #2196F3;
+ border: 2px solid #fff;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: white;
+ font-weight: bold;
+}
+
+  </style>
+</head>
+<body>
+<h3>align-content: flex-start</h3>
+<div class="container align-start">
+ <div class="item">1</div>
+ <div class="item">2</div>
+ <div class="item">3</div>
+ <div class="item">4</div>
+ <div class="item">5</div>
+</div>
+
+<h3>align-content: center</h3>
+<div class="container align-center">
+ <div class="item">1</div>
+ <div class="item">2</div>
+ <div class="item">3</div>
+ <div class="item">4</div>
+ <div class="item">5</div>
+</div>
+
+<h3>align-content: space-between</h3>
+<div class="container align-space-between">
+ <div class="item">1</div>
+ <div class="item">2</div>
+ <div class="item">3</div>
+ <div class="item">4</div>
+ <div class="item">5</div>
+</div>
+
+</body>
+</html>

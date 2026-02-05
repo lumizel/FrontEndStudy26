@@ -1,0 +1,89 @@
+<!--
+CSS Grid는 2차원 레이아웃 시스템입니다. Flexbox가
+한 방향(가로 또는 세로)으로만 아이템을 배치한다면,
+Grid는 행(row)과 열(column)을 동시에 제어할 수 있습니다.
+
+주요 용어 정리:
+- Grid Container: display: grid가 적용된 부모 요소
+- Grid Item: Grid Container의 직접적인 자식 요소들
+- Grid Line: 격자를 구성하는 선들 (가로선, 세로선)
+- Grid Track: 두 Grid Line 사이의 공간 (행 또는 열)
+- Grid Cell: 행과 열이 만나는 개별 칸
+- Grid Area: 하나 이상의 Grid Cell로 구성된 영역
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Grid 기초 실습</title>
+ <style>
+ .grid-container {
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr; /* 3개의 동일한 열 */
+ grid-template-rows: 100px 100px 100px; /* 3개의 100px 행 */
+ gap: 10px; /* 격자 사이 간격 */
+ background-color: #f0f0f0;
+ padding: 20px;
+ }
+
+ .grid-item {
+ background-color: #ff0000;
+ color: white;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 18px;
+ border-radius: 5px;
+ }
+
+
+   .grid-container-advanced {
+ display: grid;
+ grid-template-columns: 2fr 1fr 1fr; /* 2:1:1 비율 */
+ grid-template-rows: 80px auto 60px; /* 고정, 자동, 고정 */
+ gap: 15px;
+ height: 400px;
+ background-color: #e8f4f8;
+ padding: 20px;
+}
+
+.grid-item-special {
+ background-color: #2196F3;
+ color: white;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 8px;
+}
+
+ </style>
+</head>
+<body>
+ <div class="grid-container">
+ <div class="grid-item">1</div>
+ <div class="grid-item">2</div>
+ <div class="grid-item">3</div>
+ <div class="grid-item">4</div>
+ <div class="grid-item">5</div>
+ <div class="grid-item">6</div>
+ <div class="grid-item">7</div>
+ <div class="grid-item">8</div>
+ <div class="grid-item">9</div>
+ </div>
+
+<div class="grid-container-advanced">
+ <div class="grid-item-special">넓은 헤더</div>
+ <div class="grid-item-special">메뉴1</div>
+ <div class="grid-item-special">메뉴2</div>
+ <div class="grid-item-special">메인 콘텐츠</div>
+ <div class="grid-item-special">사이드바1</div>
+ <div class="grid-item-special">사이드바2</div>
+ <div class="grid-item-special">푸터1</div>
+ <div class="grid-item-special">푸터2</div>
+ <div class="grid-item-special">푸터3</div>
+</div>
+
+</body>
+</html>

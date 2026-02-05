@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let student = {
+ name: "김개발",
+ age: 20,
+ major: "정보통신공학과",
+ gpa: 3.8,
+
+ // 메서드 정의
+ introduce: function() {
+ return `안녕하세요! 저는 ${this.name}이고, ${this.major}를 전공하고 있습니다.`;
+ },
+
+ study: function(subject) {
+ return `${this.name}이(가) ${subject}를 공부하고 있습니다.`;
+ },
+
+ updateGPA: function(newGPA) {
+ this.gpa = newGPA;
+ return `GPA가 ${this.gpa}로 업데이트되었습니다.`;
+ }
+};
+
+// 메서드 호출
+console.log(student.introduce());
+console.log(student.study("JavaScript"));
+console.log(student.updateGPA(4.2));
+
+
+</script>
+</body>
+</html>
+
+<!--
+핵심 포인트
+- 객체는 {} 중괄호로 생성합니다
+- 속성 접근: 객체.속성명 또는 객체["속성명"]
+- 객체는 속성과 메서드를 모두 가질 수 있습니다
+- this 키워드로 객체 자신을 참조합니다
+-->

@@ -1,0 +1,66 @@
+<!--
+flex-wrap의 주요 값들
+nowrap (기본값): 모든 아이템을 한 줄에 억지로 배치
+wrap: 공간이 부족하면 다음 줄로 넘김
+wrap-reverse: 줄바꿈하되 역순으로 배치
+
+flex-start: 줄들을 시작점에 모음
+flex-end: 줄들을 끝점에 모음
+center: 줄들을 가운데 정렬
+space-between: 줄들 사이에 균등한 간격
+space-around: 줄들 주위에 균등한 간격
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Flex Wrap 실습</title>
+ <style>
+ .container {
+ display: flex;
+ width: 400px;
+ height: 200px;
+ border: 2px solid #333;
+ margin: 20px 0;
+ }
+
+ .nowrap {
+ flex-wrap: nowrap; /* 기본값 */
+ }
+
+ .wrap {
+ flex-wrap: wrap;
+ }
+
+ .item {
+ width: 150px;
+ height: 80px;
+ background-color: #4CAF50;
+ border: 2px solid #fff;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: white;
+ font-weight: bold;
+ }
+ </style>
+</head>
+<body>
+ <h3>flex-wrap: nowrap (기본값)</h3>
+ <div class="container nowrap">
+ <div class="item">카드 1</div>
+ <div class="item">카드 2</div>
+ <div class="item">카드 3</div>
+ <div class="item">카드 4</div>
+ </div>
+
+ <h3>flex-wrap: wrap</h3>
+ <div class="container wrap">
+ <div class="item">카드 1</div>
+ <div class="item">카드 2</div>
+ <div class="item">카드 3</div>
+ <div class="item">카드 4</div>
+ </div>
+</body>
+</html>

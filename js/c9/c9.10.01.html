@@ -1,0 +1,49 @@
+<!--
+스코프는 변수나 함수가 접근 가능한 범위를 의미합니다.
+마치 아파트 단지처럼 생각해보세요.
+각 세대(함수)는 자신만의 공간이 있고, 공용 공간(전역)도 있죠
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let globalVar = "전역 변수";
+
+function outerFunction() {
+ let outerVar = "외부 함수 변수";
+
+ function innerFunction() {
+ let innerVar = "내부 함수 변수";
+
+ console.log(globalVar); // 전역에서 찾음
+ console.log(outerVar); // 외부 함수에서 찾음
+ console.log(innerVar); // 현재 함수에서 찾음
+ }
+
+ innerFunction();
+ // console.log(innerVar); // 에러! 접근 불가능
+}
+
+outerFunction();
+
+  let message = "전역 메시지";
+
+function showMessage() {
+ let message = "지역 메시지"; // 전역 변수를 가림
+ console.log(message); // 어떤 값이 출력될까요?
+}
+
+showMessage(); // "지역 메시지" 출력
+console.log(message); // "전역 메시지" 출력
+
+
+
+</script>
+
+</body>
+</html>

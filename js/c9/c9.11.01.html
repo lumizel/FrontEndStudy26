@@ -1,0 +1,94 @@
+<!--
+1. SyntaxError (문법 에러)
+코드의 문법이 잘못되었을 때 발생합니다. 마치 한국어 문장에서 띄어쓰기나 맞춤법이 틀린 것과 같아요.
+
+2. ReferenceError (참조 에러)
+존재하지 않는 변수나 함수를 사용하려 할 때 발생합니다. 전화번호부에 없는 사람에게 전화를 걸려는 것과 비슷하죠.
+
+3. TypeError (타입 에러)
+잘못된 타입의 값에 대해 연산을 수행하려 할 때 발생합니다. 숫자가 아닌데 수학 계산을 하려는 것처럼요.
+
+4. RangeError (범위 에러)
+숫자가 허용된 범위를 벗어났을 때 발생합니다.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+// 안전한 계산기 만들기
+function 안전한나누기(a, b) {
+ try {
+ if (b === 0) {
+ throw new Error("0으로 나눌 수 없습니다!");
+ }
+
+ let result = a / b;
+ console.log(`${a} ÷ ${b} = ${result}`);
+ return result;
+
+ } catch (error) {
+ console.log("에러가 발생했습니다:", error.message);
+ return null;
+
+ } finally {
+ console.log("계산 작업이 완료되었습니다.");
+ }
+}
+
+// 테스트해보기
+안전한나누기(10, 2); // 정상 작동
+안전한나누기(10, 0); // 에러 처리
+
+
+  function 회원가입검증(userData) {
+ try {
+ // 이름 검증
+ if (!userData.name || userData.name.trim() === "") {
+ throw new Error("이름을 입력해주세요!");
+ }
+
+ // 이메일 검증
+ if (!userData.email || !userData.email.includes("@")) {
+ throw new Error("올바른 이메일 주소를 입력해주세요!");
+ }
+
+ // 나이 검증
+ if (userData.age < 0 || userData.age > 150) {
+ throw new RangeError("올바른 나이를 입력해주세요!");
+ }
+
+ console.log(" 회원가입이 완료되었습니다!");
+ return true;
+
+ } catch (error) {
+ if (error instanceof RangeError) {
+ console.log(" 범위 오류:", error.message);
+ } else {
+ console.log(" 입력 오류:", error.message);
+ }
+ return false;
+ }
+}
+
+// 테스트 해보기
+let 사용자1 = { name: "김개발", email: "kim@example.com", age: 20 };
+let 사용자2 = { name: "김미미", email: "invalid@email", age: -5 };
+
+회원가입검증(사용자1); // 성공
+회원가입검증(사용자2); // 실패
+
+
+
+</script>
+</body>
+</html>
+
+<!--
+
+-->

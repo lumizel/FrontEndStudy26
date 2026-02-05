@@ -1,0 +1,75 @@
+<!--
+함수가 필요한 이유
+박멘토가 김개발에게 설명했습니다. "함수를 사용하면 세 가지 큰 장점이 있어
+
+재사용성: 한 번 만들면 여러 번 사용 가능
+유지보수: 수정할 때 한 곳만 고치면 됨
+가독성: 코드가 깔끔하고 이해하기 쉬워짐"
+
+함수의 기본 구조
+JavaScript에서 함수는 다음과 같은 구조를 가집니다
+
+function 함수이름() {
+ // 실행할 코드
+}
+
+실생활로 비유하면, 함수는 자판기와 같습니다.
+- 함수 이름: 자판기에 붙은 라벨 (예: "콜라 자판기")
+- 함수 내용: 자판기 안의 동작 메커니즘
+- 함수 호출: 버튼을 눌러서 원하는 음료 받기
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 함수 선언
+function sayHello() {
+ console.log("안녕하세요! 김개발입니다.");
+}
+
+// 함수 호출
+sayHello();
+
+    // 매개변수를 받는 함수
+function greetUser(name) {
+ console.log("안녕하세요, " + name + "님!");
+}
+
+// 다양한 방식으로 함수 호출
+greetUser("김개발");
+greetUser("박멘토");
+greetUser("이디자인");
+
+// 두 수를 더하는 함수
+function addNumbers(a, b) {
+ let result = a + b;
+ return result; // 결과를 반환
+}
+
+// 함수의 반환값을 변수에 저장
+let sum = addNumbers(10, 20);
+console.log("계산 결과: " + sum);
+
+// 직접 사용도 가능
+console.log("5 + 3 = " + addNumbers(5, 3));
+
+
+
+</script>
+
+</body>
+</html>
+
+<!--
+핵심 내용 요약
+함수는 특정 작업을 수행하는 코드 블록입니다
+function 함수이름() { } 형태로 선언합니다
+함수 이름 뒤에 ()를 붙여서 호출합니다
+매개변수로 값을 받을 수 있고, return으로 결과를 돌려줄 수 있습니다
+
+-->

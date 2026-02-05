@@ -1,0 +1,141 @@
+<!--
+JavaScript의 원시 타입(Primitive Types)은
+가장 기본적인 데이터 타입들로, 총 5가지가 있습니다.
+
+Number (숫자)
+정수와 실수를 모두 포함하는 숫자 데이터입니다.
+계산기처럼 수학적 연산이 가능합니다.
+
+String (문자열)
+텍스트 데이터로, 따옴표('')나 쌍따옴표("")로 감싸서 표현합니다.
+책의 내용처럼 읽을 수 있는 문자들의 모음입니다.
+
+Boolean (불린)
+참(true) 또는 거짓(false)만을 나타내는 논리 데이터입니다.
+전등의 켜짐/꺼짐 스위치와 같습니다.
+
+Undefined (정의되지 않음)
+변수가 선언되었지만 아직 값이 할당되지 않은 상태입니다.
+빈 상자와 같습니다.
+
+Null (널)
+의도적으로 "값이 없음"을 나타내는 데이터입니다.
+빈 상자라고 명시적으로 표시해둔 것과 같습니다.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>데이터 타입 실습</title>
+</head>
+
+<body>
+    <h1>데이터 타입 실습</h1>
+
+    <script>
+        // Number (숫자) 타입
+        let studentAge = 20;
+        let height = 175.5;
+        let temperature = -5;
+
+        console.log(studentAge); // 결과: 20
+        console.log(typeof studentAge); // 결과: "number"
+
+        // String (문자열) 타입
+        let studentName = "김개발";
+        let greeting = '안녕하세요!';
+        let message = "오늘 온도는 " + temperature + "도입니다.";
+
+        console.log(studentName); // 결과: 김개발
+        console.log(typeof studentName); // 결과: "string"
+
+        // Boolean (불린) 타입
+        let isStudent = true;
+        let isGraduated = false;
+
+        console.log(isStudent); // 결과: true
+        console.log(typeof isStudent); // 결과: "boolean"
+
+        // Undefined 타입
+        let futureJob;
+        console.log(futureJob); // 결과: undefined
+        console.log(typeof futureJob); // 결과: "undefined"
+
+        // Null 타입
+        let previousJob = null;
+        console.log(previousJob); // 결과: null
+        console.log(typeof previousJob); // 결과: "object" (JavaScript의 특이한 점!)
+
+        // 다양한 값의 타입 확인해보기
+        console.log(typeof 42); // "number"
+        console.log(typeof "Hello"); // "string"
+        console.log(typeof true); // "boolean"
+        console.log(typeof undefined); // "undefined"
+        console.log(typeof null); // "object" (주의!)
+
+        // 자동 타입 변환 체험
+        let score = 85;
+        let result = "당신의 점수는 " + score + "점입니다.";
+        console.log(result); // "당신의 점수는 85점입니다."
+        console.log(typeof result); // "string"
+
+        // 숫자와 문자열 구분하기
+        let numberValue = 100;
+        let stringValue = "100";
+        console.log(numberValue + 50); // 150 (숫자 계산)
+        console.log(stringValue + 50); // "10050" (문자열 연결) , 문자 100 뒤에 50을 붙임 그래서 '10050'이 됨.
+
+        // 사용자 정보 관리 시스템
+        let userInfo = {
+         name: "김개발", // string
+         age: 20, // number
+         height: 175.8, // number
+         isStudent: true, // boolean
+         graduationYear: null, // null  QY(아직 졸업 안함)
+         favoriteColor: undefined // undefined (아직 정하지 않음) 변수는 지정했는데 아직 변수에 값을 집어 넣지 않은 상태라 ㅇㅇ null을 안씀.
+        };
+
+        // 타입별 처리 함수
+        function processUserData(user) {
+         console.log("=== 사용자 정보 분석 ===");
+
+         // 문자열 처리
+         if (typeof user.name === "string") {
+         console.log("이름: " + user.name + " (길이: " + user.name.length + "자)");
+         }
+
+         // 숫자 처리
+         if (typeof user.age === "number") {
+         console.log("나이: " + user.age + "세 (성인 여부: " + (user.age >= 20) + ")");
+         }
+
+         // 불린 처리
+         if (typeof user.isStudent === "boolean") {
+         console.log("학생 여부: " + (user.isStudent ? "재학중" : "비학생"));
+         }
+
+         // null과 undefined 처리
+         if (user.graduationYear === null) {
+         console.log("졸업년도: 미정 (재학중)");
+         }
+
+         if (user.favoriteColor === undefined) {
+         console.log("선호색상: 아직 선택하지 않음");
+         }
+        }
+
+        processUserData(userInfo);
+            </script>
+</body>
+
+</html>
+
+<!--
+이번 섹션에서는 JavaScript의 5가지 원시 데이터 타입을 배웠습니다.
+
+Number: 모든 숫자 (정수, 실수, 음수)
+String: 따옴표로 감싼 텍스트 데이터
+Boolean: true 또는 false
+Undefined: 값이 할당되지 않은 상태
+Null: 의도적으로 비어있음을 나타내는 값
+-->
