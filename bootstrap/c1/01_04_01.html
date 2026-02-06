@@ -1,0 +1,85 @@
+<!--
+Primary (주 색상): 브랜드의 메인 색상 (파란색)
+Secondary (보조 색상): 보조적인 색상 (회색)
+Success (성공): 성공 메시지용 (초록색)
+Danger (위험): 경고나 오류용 (빨간색)
+Warning (주의): 주의 메시지용 (노란색)
+Info (정보): 정보 전달용 (하늘색)
+Light (밝은): 밝은 배경용 (연한 회색)
+Dark (어두운): 어두운 배경용 (진한 회색)
+
+색상은 크게 두 가지 방식으로 적용할 수 있습니다:
+- 텍스트 색상: text-primary, text-success 등
+- 배경 색상: bg-primary, bg-success 등
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부트스트랩 색상 테스트</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>부트스트랩 색상 시스템</h1>
+
+        <!-- 텍스트 색상 -->
+        <h2>텍스트 색상</h2>
+        <p class="text-primary">Primary 색상 텍스트</p>
+        <p class="text-success">Success 색상 텍스트</p>
+        <p class="text-danger">Danger 색상 텍스트</p>
+        <p class="text-warning">Warning 색상 텍스트</p>
+
+        <!-- 배경 색상 -->
+        <h2>배경 색상</h2>
+        <div class="bg-primary text-white p-3 mb-2">Primary 배경</div>
+        <div class="bg-success text-white p-3 mb-2">Success 배경</div>
+        <div class="bg-danger text-white p-3 mb-2">Danger 배경</div>
+        <div class="bg-warning text-dark p-3 mb-2">Warning 배경</div>
+    </div>
+
+    <div class="container mt-5">
+        <!-- 알림 메시지들 -->
+        <div class="alert alert-success" role="alert">
+            <strong>성공!</strong> 회원가입이 완료되었습니다.
+        </div>
+
+        <div class="alert alert-danger" role="alert">
+            <strong>오류!</strong> 비밀번호가 일치하지 않습니다.
+        </div>
+
+        <div class="alert alert-warning" role="alert">
+            <strong>주의!</strong> 세션이 곧 만료됩니다.
+        </div>
+
+        <!-- 버튼들 -->
+        <div class="mb-4">
+            <button class="btn btn-primary me-2">메인 버튼</button> <!--me-2는 오른쪽에 공백 2 주삼.-->
+            <button class="btn btn-success me-2">저장</button>
+            <button class="btn btn-danger me-2">삭제</button>
+            <button class="btn btn-warning me-2">수정</button>
+        </div>
+
+        <!-- 배지(Badge) -->
+        <p>
+            상태: <span class="badge bg-success">온라인</span>
+            알림: <span class="badge bg-danger">5</span>
+            등급: <span class="badge bg-primary">프리미엄</span>
+        </p>
+    </div>
+
+
+
+</body>
+</html>
+
+
+<!--
+t	Top	위
+b	Bottom	아래
+s	Start	왼쪽 (시작)
+e	End	오른쪽 (끝)
+x	X-axis	가로 양옆 (s + e)
+y	Y-axis	세로 위아래 (t + b)
+-->
